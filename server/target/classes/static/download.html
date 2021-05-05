@@ -1,0 +1,5 @@
+<form class="form-signin" th:action="@{/employee/File/download}" method="post">
+    <p><h1>下载文件</h1></p>
+    <p><input type="submit" value="下载"/></p>
+    <p style="color: red" th:text="${result}" th:if="${not #strings.isEmpty(result)}"></p>
+</form>

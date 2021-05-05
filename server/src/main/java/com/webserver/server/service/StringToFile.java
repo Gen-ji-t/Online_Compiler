@@ -1,3 +1,5 @@
+package com.webserver.server.service;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -5,17 +7,13 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class StringToFile {
-    public static void main(String[] args) {
+    public StringToFile(String a) {
         FileOutputStream tofile = null;
-        String a="WriteToFileTest";
         String b="\r\n";
         a+=b;
         try {
-            tofile = new FileOutputStream(new File("C:\\Users\\Gen_ji\\Desktop\\OC\\tofile.txt"));
-            int i=0;
-            for(;i<3;i++){
-                tofile.write(a.getBytes(StandardCharsets.UTF_8));
-            }
+            tofile = new FileOutputStream(new File("D:\\complier_workspace\\cpp.cpp"));
+            tofile.write(a.getBytes(StandardCharsets.UTF_8));
             tofile.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
