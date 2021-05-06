@@ -26,18 +26,21 @@
                         </select>
                     </div>
                 </div>
-                <label for="message">代码</label>
-                <div class="field grow-wrap">
+                
+                <div class="field half">
+                    <label for="message">代码</label>
                     <textarea v-model="codeText" name="message" id="message" rows="8" placeholder="" 
                         onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
                 </div>
+                
+                <div class="field half">
+                    <label style="margin-left: 30px;" for="message">输出结果</label>
+                    <textarea readOnly="true" name="message" id="res" rows="8" placeholder=""></textarea>
+                </div>
+
                 <ul class="actions align-center">
                     <li><input value="运行" class="button special" type="button" @click="runCode($event)"></li>
                 </ul>
-                <div class="field">
-                    <label for="message">输出结果</label>
-                    <textarea name="message" id="message" rows="6" placeholder=""></textarea>
-                </div>
             </form>
         </div>
     </div>
