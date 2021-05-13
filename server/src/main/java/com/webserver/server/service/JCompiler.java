@@ -12,7 +12,6 @@ public class JCompiler {
         Process compile;
         Process run;
         int runnable = 0;
-
         try {
             //compile java
             compile = Runtime.getRuntime().exec("javac " + workdir + "temp.java");
