@@ -24,7 +24,7 @@ public class IndexController {
 
     @PostMapping("/index")
     @ResponseBody
-    public String handleFileUpload(@RequestParam(value = "programLanguage",required = true) String codeLang, @RequestParam(value = "code",required = true)String code) {
+    public String handleCodeUpload(@RequestParam(value = "programLanguage",required = true) String codeLang, @RequestParam(value = "code",required = true)String code) {
         System.out.println(codeLang+" "+code);         //打印收到的消息code
         StringToFile string = new StringToFile(workdir,codeLang,code);  //生成相应文件
         if(codeLang.equals("cpp")) {
@@ -45,6 +45,24 @@ public class IndexController {
         }else{
             CPPCompiler cpp = new CPPCompiler();
             return cpp.run(workdir);
+        }
+    }
+
+    public void handleTextUpdate(String codeLang, String code) {
+        System.out.println(codeLang + " " + code);
+        StringToFile string = new StringToFile(workdir,codeLang,code);  //生成相应文件
+        if(codeLang.equals("cpp")) {
+            CPPCompiler cpp = new CPPCompiler();           //构建编译
+        }else if(codeLang.equals("java")){
+            JCompiler java = new JCompiler();
+        }else if(codeLang.equals("c")){
+            CCompiler c = new CCompiler();
+        }else if(codeLang.equals("py")){
+            PythonCompiler python = new PythonCompiler();
+        }else if(codeLang.equals("go")){
+            GoCompiler go = new GoCompiler();
+        }else{
+            CPPCompiler cpp = new CPPCompiler();
         }
     }
 }

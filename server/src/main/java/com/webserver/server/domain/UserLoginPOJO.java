@@ -12,8 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class UserLogin {
+public class UserLoginPOJO {
     private String username;
     private String password;
 }

@@ -6,14 +6,14 @@ import lombok.NoArgsConstructor;
 /**
  * @Author: Tsuhang Liang(Nero Ransom) CUG
  * @Date: 2021/5/13 17:48
- * @Description: update text by user.
+ * @Description
  **/
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class TextUpdate {
+public class TextUpdatePOJO {
     private String username;
     private String password;
     private String path;
