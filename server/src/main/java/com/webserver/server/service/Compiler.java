@@ -8,5 +8,7 @@ package com.webserver.server.service;
 public interface Compiler {
     void makeFile(String filename);
     void compile(); //编译
-    String exc();   //执行返回执行结果
+    String exc();   //执行返回执行结果(含报错)
 }
+
+

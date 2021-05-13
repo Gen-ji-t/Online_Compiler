@@ -7,14 +7,14 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class StringToFile {
-    public StringToFile(String a) {
-        FileOutputStream tofile = null;
+    public StringToFile(String workdir,String lang,String code) {
+        FileOutputStream toFile = null;
         String b="\r\n";
-        a+=b;
+        code+=b;
         try {
-            tofile = new FileOutputStream(new File("D:\\complier_workspace\\cpp.cpp"));
-            tofile.write(a.getBytes(StandardCharsets.UTF_8));
-            tofile.close();
+            toFile = new FileOutputStream(new File(workdir+"temp."+lang));
+            toFile.write(code.getBytes(StandardCharsets.UTF_8));
+            toFile.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
