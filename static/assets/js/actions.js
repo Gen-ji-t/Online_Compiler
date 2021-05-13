@@ -8,8 +8,9 @@ var app = new Vue({
             { id: '', val: '- 请选择编程语言（默认为C++） -' },
             { id: 'c', val: 'C' },
             { id: 'cpp', val: 'C++' },
-            { id: 'go', val: 'Go' },
-            { id: 'python', val: 'Python' }
+            { id: 'go', val: 'Golang' },
+            { id: 'py', val: 'Python' },
+            { id: 'java', val: 'Java' }
         ]
     },
     methods: {
@@ -26,7 +27,7 @@ var app = new Vue({
                 }
             };
 
-            axios.post('http://127.0.0.1:8181/index', param, config).then(function (response) {
+            axios.post('http://112.124.8.12:8181/index', param, config).then(function (response) {
                 let resultText = document.getElementById("res");
                 resultText.innerText = response.data;
             }).catch(function (error) {
@@ -43,8 +44,10 @@ var app = new Vue({
                 this.codeText = '#include <iostream> \nusing namespace std; \n\nint main() { \ncout << "Hello cpp!" << endl; \nreturn 0; \n}';
             } else if(this.plangID === 'go'){
                 this.codeText = 'package main \nimport  "fmt" \n\nfunc main() { \nfmt.Println("Hello golang!") \n}';
-            } else if(this.plangID === 'python'){
+            } else if(this.plangID === 'py'){
                 this.codeText = 'print("Hello python!")';
+            }else if(this.plangID === 'java'){
+                this.codeText = 'public class temp {\npublic static void main(String[] args) {\nSystem.out.println("Hello Java");\n}\n}\n';
             }
         }
     }
