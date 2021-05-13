@@ -11,7 +11,7 @@ public class StringToFile {
         String b="\r\n";
         a+=b;
         try {
-            tofile = new FileOutputStream(new File("C:\\Users\\Gen_ji\\Desktop\\OC\\tofile.txt"));
+            tofile = new FileOutputStream(new File("C:\\Workspace\\test.java"));
             int i=0;
             for(;i<3;i++){
                 tofile.write(a.getBytes(StandardCharsets.UTF_8));
