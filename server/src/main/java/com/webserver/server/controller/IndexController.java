@@ -4,8 +4,6 @@ import com.webserver.server.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import javax.tools.JavaCompiler;
-
 
 /**
  * @Author: Tsuhang Liang(Nero Ransom) CUG
@@ -28,22 +26,22 @@ public class IndexController {
         System.out.println(codeLang+" "+code);         //打印收到的消息code
         StringToFile string = new StringToFile(workdir,codeLang,code);  //生成相应文件
         if(codeLang.equals("cpp")) {
-            CPPCompiler cpp = new CPPCompiler();           //构建编译
+            CPPRun cpp = new CPPRun();           //构建编译
             return cpp.run(workdir);
         }else if(codeLang.equals("java")){
-            JCompiler java = new JCompiler();
+            JRun java = new JRun();
             return java.run(workdir);
         }else if(codeLang.equals("c")){
-            CCompiler c = new CCompiler();
+            CRun c = new CRun();
             return c.run(workdir);
         }else if(codeLang.equals("py")){
-            PythonCompiler python = new PythonCompiler();
+            PythonRun python = new PythonRun();
             return python.run(workdir);
         }else if(codeLang.equals("go")){
-            GoCompiler go = new GoCompiler();
+            GoRun go = new GoRun();
             return go.run(workdir);
         }else{
-            CPPCompiler cpp = new CPPCompiler();
+            CPPRun cpp = new CPPRun();
             return cpp.run(workdir);
         }
     }
@@ -52,17 +50,17 @@ public class IndexController {
         System.out.println(codeLang + " " + code);
         StringToFile string = new StringToFile(workdir,codeLang,code);  //生成相应文件
         if(codeLang.equals("cpp")) {
-            CPPCompiler cpp = new CPPCompiler();           //构建编译
+            CPPRun cpp = new CPPRun();           //构建编译
         }else if(codeLang.equals("java")){
-            JCompiler java = new JCompiler();
+            JRun java = new JRun();
         }else if(codeLang.equals("c")){
-            CCompiler c = new CCompiler();
+            CRun c = new CRun();
         }else if(codeLang.equals("py")){
-            PythonCompiler python = new PythonCompiler();
+            PythonRun python = new PythonRun();
         }else if(codeLang.equals("go")){
-            GoCompiler go = new GoCompiler();
+            GoRun go = new GoRun();
         }else{
-            CPPCompiler cpp = new CPPCompiler();
+            CPPRun cpp = new CPPRun();
         }
     }
 }
