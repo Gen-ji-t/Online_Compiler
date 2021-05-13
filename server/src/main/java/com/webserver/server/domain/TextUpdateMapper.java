@@ -14,9 +14,9 @@ import java.util.List;
 @Repository
 public interface TextUpdateMapper {
     //查询
-    public List<UserLoginPOJO> queryAll();
+    public List<TextUpdatePOJO> queryAll();
     //添加数据
-    public int add(UserLoginPOJO userLogin);
+    public int add(TextUpdatePOJO userLogin);
     //根据用户名查询数据
-    public UserLoginPOJO queryByName(String username);
+    public TextUpdatePOJO queryByName(String username);
 }

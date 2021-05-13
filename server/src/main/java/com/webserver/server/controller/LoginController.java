@@ -1,7 +1,7 @@
 package com.webserver.server.controller;
 
 import com.webserver.server.domain.UserLoginPOJO;
-import com.webserver.server.service.UserLoginServicesImpl;
+import com.webserver.server.service.UserLoginServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class LoginController {
     @Autowired
-    UserLoginServicesImpl userLoginServicesImpl;
+    UserLoginServices userLoginServicesImpl;
 
     @GetMapping("/")
     public String login() {
