@@ -27,7 +27,7 @@ var app = new Vue({
                 }
             };
 
-            axios.post('http://112.124.8.12:8181/index', param, config).then(function (response) {
+            axios.post('http://localhost:8181/index', param, config).then(function (response) {
                 let resultText = document.getElementById("res");
                 resultText.innerText = response.data;
             }).catch(function (error) {
