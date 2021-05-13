@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <title>在线编译工具</title>
+</head>
+
+<body>
+    <div class="box" id="codeompiler">
+        <div class="content">
+            <h2 class="align-center">在线编译工具</h2>
+            <hr />
+            <form action="#" method="post">
+                <div class="field">
+                    <label for="dept">编程语言</label>
+                    <div class="select-wrapper">
+                        <select v-model="plangID" @change="plangChange($event)">
+                            <option v-for="(pl,index) in plang" :key="index" :value="pl.id"
+                                v-text="pl.val"></option>
+                        </select>
+                    </div>
+                </div>
+                <label for="message">代码</label>
+                <div class="field grow-wrap">
+                    <textarea v-model="codeText" name="message" id="message" rows="8" placeholder="" 
+                        onInput="this.parentNode.dataset.replicatedValue = this.value"></textarea>
+                </div>
+                <ul class="actions align-center">
+                    <li><input value="运行" class="button special" type="button" @click="runCode($event)"></li>
+                </ul>
+                <div class="field">
+                    <label for="message">输出结果</label>
+                    <textarea name="message" id="message" rows="6" placeholder=""></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/actions.js"></script>
+</body>
+
+</html>
