@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * @Author: Tsuhang Liang(Nero Ransom) CUG
  * @Date: 2021/5/13 17:53
- * @Description
+ * @Description: Test core compiler module.
  **/
 public class CompilerTest {
     @Test
