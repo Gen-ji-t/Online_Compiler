@@ -41,15 +41,15 @@ public class GoCompiler {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        File fil = new File(workdir + "temp.go");
-        boolean exist = fil.exists();
-        if (exist) {
-            fil.delete();
-            exist = false;
-        }
-        if (!exist) {
-            System.out.println("Delete Done");
-        }
+//        File fil = new File(workdir + "temp.go");
+//        boolean exist = fil.exists();
+//        if (exist) {
+//            fil.delete();
+//            exist = false;
+//        }
+//        if (!exist) {
+//            System.out.println("Delete Done");
+//        }
         return result;
     }
 }

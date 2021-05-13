@@ -27,7 +27,7 @@ var app = new Vue({
                 }
             };
 
-            axios.post('http://127.0.0.1:8181/index', param, config).then(function (response) {
+            axios.post('http://localhost:8181/index', param, config).then(function (response) {
                 let resultText = document.getElementById("res");
                 resultText.innerText = response.data;
             }).catch(function (error) {
@@ -47,7 +47,7 @@ var app = new Vue({
             } else if(this.plangID === 'py'){
                 this.codeText = 'print("Hello python!")';
             }else if(this.plangID === 'java'){
-                this.codeText = 'public class temp {\npublic static void main(String[] args) {\nSystem.out.println("Hello World");\n}\n}\n';
+                this.codeText = 'public class temp {\npublic static void main(String[] args) {\nSystem.out.println("Hello Java");\n}\n}\n';
             }
         }
     }
