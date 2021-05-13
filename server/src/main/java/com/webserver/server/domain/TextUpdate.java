@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 /**
  * @Author: Tsuhang Liang(Nero Ransom) CUG
  * @Date: 2021/5/13 17:48
- * @Description
+ * @Description: update text by user.
  **/
 
 @Data
